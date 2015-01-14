@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Angular App -->
+<html ng-app="expressAngular">
+<head>
+	<title>Express-Angular-Mongo App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"><!-- load bootstrap -->
+	<!-- Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src="app.js"></script>
+	<!-- Css -->
+	<link rel="stylesheet" href="assets/css/cover.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />	
+</head>
+<!-- Angular controller -->
+<body ng-controller="mainController">
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Node.js Express-Angular-Mongo Demo</h3>
+
+            </div>
+          </div>
+
+          <div class="inner cover" ng-hide="loading">
+            <h4 class="cover-heading">Add new contact form:</h4>
+            <form ng-submit="contactSend()">
+              <div class="form-group">
+			    <input type="name" class="form-control" id="exampleInputName" ng-model="data.name" placeholder="Name">
+			  </div>
+			  <div class="form-group">
+			    <input type="email" class="form-control" id="exampleInputEmail" ng-model="data.email" placeholder="Enter email">
+			  </div>
+
+			  <button type="submit" class="btn btn-md btn-default">Add contact</button>
+			</form>
+			<p class="status" ng-class="status_class" ng-show="status" ng-bind="status"></p>
+          </div>
+          
+          <div class="inner loader" ng-show="loading"></div>
+
+			<div class="inner contacts" ng-init="loadContacts()">
+				<h5><span ng-bind="contacts.length"></span> Contacts</h5>
+				<div class="scroll">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th style="width:160px;"></th>
+						</tr>
+
+
+						<tr ng-repeat="contact in contacts">
+							<td ng-if="!edit_flag[$index]" ng-bind="contact.name"></td>
+							<td ng-if="!edit_flag[$index]" ng-bind="contact.email"></td>
+							<td ng-if="edit_flag[$index]"><input class="form-control" type="text" ng-model="contact.name" ></td>
+							<td ng-if="edit_flag[$index]"><input class="form-control" type="email" ng-model="contact.email" ></td>
+							<td>
+								<button ng-if="!edit_flag[$index]" type="button" class="btn btn-info" ng-click="edit_flag[$index]=true">Edit</button>
+								<button ng-if="edit_flag[$index]" type="button" class="btn btn-primary" ng-click="saveContact($index)">Save</button>
+								<button type="button" class="btn btn-danger" ng-click="deleteContact($index)">Delete</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>
+				  Copyright &copy; 2015 <a target="_blank" href="http://codefresh.io">Codefresh</a>;
+				  Cover template for <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>, by <a target="_blank" href="https://twitter.com/mdo">@mdo</a>;
+				  See more examples at <a target="_blank" href="http://codefresh.io/labs">Codefresh Labs</a>
+			  </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+	
+</body>
+</html>

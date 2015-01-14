@@ -1,0 +1,15 @@
+{
+	"Name": "express-angular-mongo",
+	"ServiceId":"io.codefresh.orion.client.node.runner", 
+	"Params": {
+		"Name" : "Run",
+		"Target" : {
+			"Cmd": "node start",
+			"Module": "app.js",
+			"Space": "Node"
+		}
+	}, 
+	"Url":"http://localhost:9090/", 
+	"Path":"", 
+	"Type":"NodeRunner"
+}

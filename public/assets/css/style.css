@@ -1,0 +1,35 @@
+.inner.cover {
+	text-align:left;
+}
+
+.loader {
+	width:100%;
+	height:128px;
+	background-image:url('../images/loader.gif');
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+.status {
+	padding:10px;
+	margin-top:10px;
+	color:#333;
+	text-shadow:none;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.contacts {
+	text-align: left;
+	margin:20px 30px;
+	border:1px solid #fff;
+}
+
+.contacts input {
+	color:#333;
+}
+
+.scroll {
+	max-height:200px;
+	overflow-y:auto;
+}
