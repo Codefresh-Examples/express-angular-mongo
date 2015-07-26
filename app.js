@@ -3,7 +3,7 @@
 // set up ======================================================================
 var express  = require('express');
 var app      = express(); 								// create our app w/ express
-var port  	 = process.env.PORT || 9090; 
+var port  	 = process.env.PORT || 9000; 
 var mongoose = require('mongoose'); 					// mongoose for mongodb				// set the port
 var database = require('./config/database'); 			// load the database config
 
