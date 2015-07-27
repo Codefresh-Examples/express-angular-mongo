@@ -4,6 +4,9 @@
   "description"  : "Simple express angular and mongo application.",
   "main"         : "app.js",
   "author"       : "aviad@codefresh.io",
+  "scripts"		 : {
+  	"start"		 : "node app.js"
+  },
   "dependencies" : {
     "express"    : "~4.7.2",
     "mongoose"   : "~3.6.2",
