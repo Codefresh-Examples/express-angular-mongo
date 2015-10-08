@@ -12,7 +12,12 @@ var bodyParser = require('body-parser'); 	// pull information from HTML POST (ex
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 
 // configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+try{
+    mongoose.connect(database.url);
+}catch (err)
+{
+    console.log(err);
+}// connect to mongoDB database on modulus.io
 
 app.use(express.static(__dirname + '/public')); 				// set static path
 app.use(morgan('dev')); 										// log every request to the console
