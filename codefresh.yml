@@ -1,0 +1,9 @@
+version: '1.0'
+
+steps:
+  build-prj:
+    type: build
+    description: codefresh example
+    image-name: codefreshexamples/express-angular-mongo
+    dockerfile: Dockerfile
+    tag: latest
