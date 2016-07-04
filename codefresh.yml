@@ -1,19 +1,9 @@
 version: '1.0'
 
 steps:
-  clone-prj:
-    type: git-clone
-    repo: https://github.com/Codefresh-Examples/express-angular-mongo.git
-
   build-prj:
     type: build
     description: codefresh example
     image-name: codefreshexamples/express-angular-mongo
     dockerfile: Dockerfile
-    working-directory: ${{clone-prj}}
-    tag: latest
-
-  push-dockerhub:
-    type: push
-    candidate: ${{build-prj}}
     tag: latest
